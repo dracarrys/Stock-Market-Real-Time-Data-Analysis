@@ -17,3 +17,7 @@ Stock-Market-Real-Time-Data-Analysis
 - Stores ACLs and Secrets
 - Enables highly reliable distributed coordination
 - Provides distributed synchronization 
+
+## Overall Architecture
+
+![stock](https://github.com/dracarrys/Stock-Market-Real-Time-Data-Analysis/assets/100908058/c40a41e1-fe55-4a0b-8b94-f314c5a4b6ea)
