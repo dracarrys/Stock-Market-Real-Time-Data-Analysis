@@ -1,0 +1,22 @@
+cd "C:\Users\gpepe\Documents\kafka"
+ssh -i "kafka-stock-market.pem" ec2-user@ec2-44-201-161-28.compute-1.amazonaws.com
+
+wget https://downloads.apache.org/kafka/3.7.0/kafka_2.12-3.7.0.tgz
+
+ tar -xvf  kafka_2.12-3.7.0.tgz
+ 
+  sudo yum install java-1.8.0
+ 
+cd kafka_2.12-3.7.0
+
+bin/zookeeper-server-start.sh config/zookeeper.properties
+  
+  export KAFKA_HEAP_OPTS="-Xmx256M -Xms128M"
+  
+bin/kafka-server-start.sh config/server.properties
+  
+  sudo nano config/server.properties
+  
+bin/kafka-topics.sh --create --bootstrap-server 44.201.161.28:9092 --replication-factor 1 --partitions 1 --topic demo_project
+bin/kafka-console-producer.sh  --bootstrap-server 44.201.161.28:9092 --topic demo_project
+bin/kafka-console-consumer.sh  --bootstrap-server 44.201.161.28:9092 --topic demo_project
